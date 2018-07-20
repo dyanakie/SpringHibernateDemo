@@ -2,7 +2,6 @@ package com.hibernate.demo.models;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "employees")
 public class Employee {
@@ -24,18 +23,26 @@ public class Employee {
     @Column(name = "JobTitle")
     private String jobTitle;
 
+    @Column(name = "DepartmentID")
+    private int departmentID;
+
+    @Column(name = "HireDate")
+    private String hireDate;
+
     public Employee(){
 
     }
 
-    public Employee(int id, int salary, String firstName, String lastName, String jobTitle) {
-        this.id = id;
+    public Employee(int salary, int departmentID,String firstName, String lastName, String jobTitle, String hireDate) {
         this.firstName = firstName;
         this.lastName = lastName;
-
         this.jobTitle = jobTitle;
         this.salary = salary;
+        this.departmentID = departmentID;
+        this.hireDate = hireDate;
     }
+
+
 
     public int getId() {
         return id;
