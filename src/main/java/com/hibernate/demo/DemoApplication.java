@@ -23,6 +23,5 @@ public class DemoApplication {
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Town.class)
                 .buildSessionFactory();
-
     }
 }
