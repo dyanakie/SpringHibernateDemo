@@ -23,9 +23,6 @@ public class Employee {
     @Column(name = "JobTitle")
     private String jobTitle;
 
-    @Column(name = "DepartmentID")
-    private int departmentID;
-
     @Column(name = "HireDate")
     private String hireDate;
 
@@ -33,12 +30,11 @@ public class Employee {
 
     }
 
-    public Employee(int salary, int departmentID,String firstName, String lastName, String jobTitle, String hireDate) {
+    public Employee(int salary, String firstName, String lastName, String jobTitle, String hireDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.jobTitle = jobTitle;
         this.salary = salary;
-        this.departmentID = departmentID;
         this.hireDate = hireDate;
     }
 
