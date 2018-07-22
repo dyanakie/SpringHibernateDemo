@@ -25,7 +25,6 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     public Employee getById(@PathVariable("id") String id){
-        System.out.println("done");
         return service.getById(Integer.parseInt(id));
     }
 

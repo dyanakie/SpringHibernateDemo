@@ -1,20 +1,16 @@
-package com.hibernate.demo;
+package com.hibernate.demo.service;
+
 
 import com.hibernate.demo.models.Employee;
 import com.hibernate.demo.models.Town;
 import org.hibernate.SessionFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
-public class DemoApplication {
+@Configuration
+public class Factory {
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
-
-   /* @Bean
+    @Bean
     public SessionFactory createSessionFactory(){
         System.out.println("Session Factory created.");
 
@@ -23,5 +19,5 @@ public class DemoApplication {
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Town.class)
                 .buildSessionFactory();
-    }*/
+    }
 }
