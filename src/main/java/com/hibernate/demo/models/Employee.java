@@ -23,19 +23,15 @@ public class Employee {
     @Column(name = "JobTitle")
     private String jobTitle;
 
-    @Column(name = "HireDate")
-    private String hireDate;
-
     public Employee(){
 
     }
 
-    public Employee(int salary, String firstName, String lastName, String jobTitle, String hireDate) {
+    public Employee(int salary, String firstName, String lastName, String jobTitle) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.jobTitle = jobTitle;
         this.salary = salary;
-        this.hireDate = hireDate;
     }
 
 
