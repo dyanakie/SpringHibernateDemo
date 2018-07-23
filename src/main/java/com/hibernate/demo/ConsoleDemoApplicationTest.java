@@ -9,6 +9,8 @@ import org.hibernate.cfg.Configuration;
 
 public class ConsoleDemoApplicationTest {
 
+    private Thread t;
+
     public static void main(String[] args){
 
         SessionFactory factory = new Configuration()
