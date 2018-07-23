@@ -8,6 +8,15 @@
     text-align: left;
 }
 
+
 .center{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    color: white;
+}
+
+.center p{
+
+    font-size: 25px;
 }

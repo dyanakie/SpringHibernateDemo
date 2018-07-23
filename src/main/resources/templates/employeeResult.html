@@ -9,8 +9,12 @@
 <div class="header">
     <h1>WELCOME TO EMPLOYEES MANAGEMENT SYSTEM 1.0</h1>
 </div>
-<h1>employeeResult</h1>
-<p th:text="'id: ' + ${employee2.id}" />
-<a href="/employee">Submit another message</a>
+<h1>Employee Result:</h1>
+<p th:text="'Id: ' + ${employee.id}" />
+<p th:text="'First Name: ' + ${employee.firstName}" />
+<p th:text="'Last Name: ' + ${employee.lastName}" />
+<p th:text="'Job Title: ' + ${employee.jobTitle}" />
+<p th:text="'Salary: ' + ${employee.getSalary()}" />
+<button><a href="/employee">New Search</a></button>
 </body>
 </html>
