@@ -10,6 +10,7 @@
         <h1>WELCOME TO EMPLOYEES MANAGEMENT SYSTEM 1.0</h1>
      </div>
 	<h1>Form</h1>
+
     <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
     	<p>Id: <input type="text" th:field="*{id}" /></p>
         <p>Message: <input type="text" th:field="*{content}" /></p>

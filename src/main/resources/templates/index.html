@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head> 
-    <title>Getting Started: Handling Form Submission</title>
+    <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,12 +12,13 @@
 
     <div class="employeeForm">
             <h1>Search by Employee</h1>
-            <form action="#" th:action="@{/api}" th:object="${employee}" method="post">
-            <p>Employee name: <input type="text" /></p>
+            <form action="#" th:action="@{/employee}" th:object="${employee}" method="post">
+                <!--<p>Employee name: <input type="text" th:field="*{name}" /></p>-->
             <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
             </form>
         
     </div>
+
 
     <div class="center">
             <a href="/greeting"><button>GREETING</button></a>
