@@ -11,12 +11,16 @@
     </div>
 
     <div class="employeeForm">
-        <!--<p th:text="'name: ' + ${employee.name}" /></p>-->
-        <p></p>
+            <h1>Search by Employee</h1>
+            <form action="#" th:action="@{/employee}" th:object="${employee}" method="post">
+                <p>Employee id: <input type="text" th:field="*{id}" /></p>
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+            </form>
+
     </div>
 
     <div class="center">
-            <a href="/greeting"><button>GREETING</button></a>
+            <a href="/employee"><button>GREETING</button></a>
     </div>
     
 </body>

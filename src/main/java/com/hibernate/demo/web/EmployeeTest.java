@@ -14,15 +14,14 @@ public class EmployeeTest {
 
     @GetMapping("/employee")
     public String greetingForm(Model model) {
-        Employee2 newEmployee = new Employee2();
 
-        model.addAttribute("employee", newEmployee);
-        return "index";
+        model.addAttribute("employee", new Employee2());
+        return "employee";
     }
 
     @PostMapping("/employee")
     public String employeeSubmit(@ModelAttribute Employee2 employee) {
-        return "employee";
+        return "employeeResult";
     }
 
 }
