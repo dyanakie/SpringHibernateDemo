@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="header">
+    <h1>WELCOME TO EMPLOYEES MANAGEMENT SYSTEM 1.0</h1>
+</div>
+
+<div class="employeeForm">
+    <h1>Search by Salary</h1>
+    <form action="#" th:action="@{/salary}" th:object="${employee}" method="post">
+        <p>Employee salary: <input type="text" th:field="*{salary}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+
+
+</div>
+
+<div class="center">
+    <a href="/"><button>HOME</button></a>
+</div>
+
+</body>
+</html>

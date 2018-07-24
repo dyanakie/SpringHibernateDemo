@@ -9,4 +9,6 @@ public interface Repository {
     public Employee getByID(int id);
 
     public List<Employee> getAll();
+
+    public List<Employee> getWithSalaryOver(int salary);
 }

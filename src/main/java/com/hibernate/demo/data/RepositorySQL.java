@@ -50,4 +50,9 @@ public class RepositorySQL implements Repository{
 
         return theList;
     }
+
+    @Override
+    public List<Employee> getWithSalaryOver(int salary) {
+        return null;
+    }
 }

@@ -9,4 +9,6 @@ public interface EmployeeService {
     public Employee getById(int id);
 
     public List<Employee> getAll();
+
+    public List<Employee> getWithSalaryOver(int salary);
 }

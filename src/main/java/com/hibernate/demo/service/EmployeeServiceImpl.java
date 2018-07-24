@@ -28,4 +28,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> getAll() {
         return repository.getAll();
     }
+
+    @Override
+    public List<Employee> getWithSalaryOver(int salary) {
+        return null;
+    }
 }

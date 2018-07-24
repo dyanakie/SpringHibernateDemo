@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class EmployeeController {
-    private Employee testEmployee;
     private EmployeeService service;
 
     @Autowired
@@ -36,6 +36,25 @@ public class EmployeeController {
         employee = service.getById(employee.getId());
         model.addAttribute("employee", employee);
         return "employeeResult";
+    }
+
+    @GetMapping("/salary")
+    public String salaryForm(Model model){
+
+        Employee employee = new Employee();
+        model.addAttribute("salary", employee);
+
+        return "salary";
+    }
+
+    @PostMapping("/salarySearch")
+    public String salarySubmit(@ModelAttribute Employee employee, Model model) {
+
+        List<Employee> list = service.getWithSalaryOver(employee.getSalary());
+
+        employee = service.getById(employee.getId());
+        model.addAttribute("employee", employee);
+        return "salaryResult";
     }
 
 }
