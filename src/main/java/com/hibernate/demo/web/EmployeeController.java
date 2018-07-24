@@ -2,6 +2,7 @@ package com.hibernate.demo.web;
 
 import com.hibernate.demo.models.Employee;
 import com.hibernate.demo.models.Employee2;
+import com.hibernate.demo.models.Salary;
 import com.hibernate.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,22 +41,36 @@ public class EmployeeController {
     }
 
     @GetMapping("/salary")
-    public String salaryForm(Model model){
+    public String createSalaryView(){
 
-        Employee employee = new Employee();
-        model.addAttribute("salary", employee);
+        ModelAndView modelAndView = new ModelAndView("salary");
+        modelAndView.addObject("salary", new Salary());
 
         return "salary";
     }
 
-    @PostMapping("/salarySearch")
+    /*@PostMapping("/salary")
     public String salarySubmit(@ModelAttribute Employee employee, Model model) {
 
         List<Employee> list = service.getWithSalaryOver(employee.getSalary());
 
         employee = service.getById(employee.getId());
         model.addAttribute("employee", employee);
-        return "salaryResult";
+        return "salaryR";
+    }*/
+
+    @GetMapping("/showAll")
+    public String showAll(){
+
+        ModelAndView modelAndView = new ModelAndView("showAll");
+
+        List<Employee> allE = service.getAll();
+
+        modelAndView.addObject("allE", allE);
+
+
+        return "showAll";
+
     }
 
 }
