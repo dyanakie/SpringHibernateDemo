@@ -6,15 +6,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+       <div class="header">
+           <h1>WELCOME TO EMPLOYEES MANAGEMENT SYSTEM 1.0</h1>
+           </div>
+           <hr>
+       <h1>ALL CURRENT EMPLOYEES: </h1>
        <table>
-          <th:block th:each="Employee : ${allE}">
+          <th:block th:each="Employee : ${allEmployees}">
              <tr>
-                <td th:text="${Employee.name}">...</td>
+                <td th:text="${Employee.firstName}">...</td>
+                <td th:text="${Employee.lastName}">...</td>
+                <td th:text="${Employee.JobTitle}">...</td>
+                <td th:text="${Employee.salary}">...</td>
 
              </tr>
-             <tr>
-                <td colspan="2" th:text="${user.address}">...</td>
-             </tr>
+
           </th:block>
        </table>
 </body>

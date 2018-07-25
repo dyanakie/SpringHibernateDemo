@@ -62,16 +62,14 @@ public class EmployeeController {
     }*/
 
     @GetMapping("/showAll")
-    public String showAll(){
+    public ModelAndView showAll(){
 
         ModelAndView modelAndView = new ModelAndView("showAll");
 
-        List<Employee> allE = service.getAll();
-
-        modelAndView.addObject("allE", allE);
+        modelAndView.addObject("allEmployees", service.getAll());
 
 
-        return "showAll";
+        return modelAndView;
 
     }
 
@@ -95,10 +93,5 @@ public class EmployeeController {
 
     }
 
-    /*@GetMapping("/createEmployeeR")
-    public ModelAndView createEmployeeResultView() {
-        ModelAndView modelAndView = new ModelAndView("createEmployeeR");
-        return modelAndView;
-    }*/
 
 }

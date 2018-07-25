@@ -42,7 +42,7 @@ public class RepositorySQL implements Repository{
         try(Session session = factory.openSession()){
             session.beginTransaction();
 
-            theList = session.createQuery("from Employee").list();
+            theList = session.createQuery("from Employee order by firstName").list();
             session.getTransaction().commit();
         }catch (Exception e){
             System.out.println(e.getMessage());
