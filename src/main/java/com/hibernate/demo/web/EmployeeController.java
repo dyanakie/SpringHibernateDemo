@@ -1,13 +1,10 @@
 package com.hibernate.demo.web;
 
 import com.hibernate.demo.models.Employee;
-import com.hibernate.demo.models.Salary;
 import com.hibernate.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 

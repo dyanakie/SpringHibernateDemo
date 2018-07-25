@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "employees")
 public class Employee {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "EmployeeID")
@@ -22,6 +23,7 @@ public class Employee {
 
     @Column(name = "JobTitle")
     private String jobTitle;
+
 
     public Employee(){
 
@@ -75,5 +77,6 @@ public class Employee {
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
+
 
 }
