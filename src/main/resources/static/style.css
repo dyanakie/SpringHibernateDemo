@@ -19,3 +19,12 @@
 
     font-size: 25px;
 }
+
+td, tr{
+    padding: 8px;
+    border: 1px solid #dddddd;
+}
+
+td:nth-child(even) {
+    background-color: #dddddd;
+}
