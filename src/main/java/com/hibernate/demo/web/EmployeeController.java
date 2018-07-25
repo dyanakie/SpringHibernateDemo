@@ -89,6 +89,7 @@ public class EmployeeController {
 
         ModelAndView modelAndView = new ModelAndView("salaryR");
 
+        System.out.println(employee.getSalary());
         modelAndView.addObject("listAllBiggerSalary", service.getWithSalaryOver(employee.getSalary()));
 
         return modelAndView;

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @org.springframework.stereotype.Repository
 public class RepositorySQL implements Repository{
@@ -58,7 +59,8 @@ public class RepositorySQL implements Repository{
         try(Session session = factory.openSession()){
             session.beginTransaction();
 
-            theList = session.createQuery("from Employee as e where e.salary >= 10000 order by salary").list();
+            theList = session.createQuery("from Employee as e where e.salary >= :salary order by salary").setParameter("salary", salary).list();
+
             session.getTransaction().commit();
         }catch (Exception e){
             System.out.println(e.getMessage());
