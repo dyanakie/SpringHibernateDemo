@@ -8,6 +8,8 @@ public interface EmployeeService {
 
     public Employee getById(int id);
 
+    public void addEmployee(Employee employee);
+
     public List<Employee> getAll();
 
     public List<Employee> getWithSalaryOver(int salary);

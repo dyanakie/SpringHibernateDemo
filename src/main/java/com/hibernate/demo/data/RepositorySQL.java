@@ -55,4 +55,19 @@ public class RepositorySQL implements Repository{
     public List<Employee> getWithSalaryOver(int salary) {
         return null;
     }
+
+    @Override
+    public void addEmployee(Employee employee) {
+
+
+        try(Session session = factory.openSession()){
+            session.beginTransaction();
+            session.save(employee);
+            session.getTransaction().commit();
+            System.out.println(employee.getFirstName() + employee.getLastName() + " created Successfully");
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
+    }
 }

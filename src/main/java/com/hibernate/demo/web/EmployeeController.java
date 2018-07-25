@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.jws.WebParam;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,5 +74,31 @@ public class EmployeeController {
         return "showAll";
 
     }
+
+    @GetMapping("/createEmployee")
+    public ModelAndView createEmployeeView(){
+         ModelAndView modelAndView = new ModelAndView("createEmployee");
+         modelAndView.addObject("employee", new Employee());
+
+         return modelAndView;
+
+    }
+
+    @PostMapping("/createEmployee")
+    public ModelAndView createEmployee(Employee employee){
+
+        ModelAndView modelAndView = new ModelAndView("createEmployeeR");
+
+        service.addEmployee(employee);
+
+        return modelAndView;
+
+    }
+
+    /*@GetMapping("/createEmployeeR")
+    public ModelAndView createEmployeeResultView() {
+        ModelAndView modelAndView = new ModelAndView("createEmployeeR");
+        return modelAndView;
+    }*/
 
 }

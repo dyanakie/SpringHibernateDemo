@@ -11,4 +11,6 @@ public interface Repository {
     public List<Employee> getAll();
 
     public List<Employee> getWithSalaryOver(int salary);
+
+    public void addEmployee(Employee employee);
 }
