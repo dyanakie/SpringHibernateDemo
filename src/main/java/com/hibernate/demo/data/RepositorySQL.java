@@ -53,7 +53,19 @@ public class RepositorySQL implements Repository{
 
     @Override
     public List<Employee> getWithSalaryOver(int salary) {
-        return null;
+        List<Employee> theList = new ArrayList<>();
+
+        try(Session session = factory.openSession()){
+            session.beginTransaction();
+
+            theList = session.createQuery("from Employee as e where e.salary >= 10000 order by salary").list();
+            session.getTransaction().commit();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+
+        return theList;
     }
 
     @Override

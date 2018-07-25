@@ -9,9 +9,30 @@
 <div class="header">
     <h1>WELCOME TO EMPLOYEES MANAGEMENT SYSTEM 1.0</h1>
 </div>
-<h1>Result</h1>
-<p th:text="'id: ' + ${employee.id}" />
-<p th:text="'content: ' + ${employee.salary}" />
-<a href="/greeting">Submit another message</a>
+ <h1>ALL CURRENT EMPLOYEES: </h1>
+       <div class="center">
+                   <a href="/salary"><button>BACK</button></a>
+           </div>
+       <table>
+          <tr>
+                          <td> <strong>First Name</strong></td>
+                          <td> <strong>Last Name</strong></td>
+                          <td> <strong>Job Title</strong></td>
+                          <td> <strong>Salary</strong></td>
+
+         </tr>
+
+          <th:block th:each="Employee : ${listAllBiggerSalary}">
+
+             <tr>
+                <td th:text="${Employee.firstName}">...</td>
+                <td th:text="${Employee.lastName}">...</td>
+                <td th:text="${Employee.JobTitle}">...</td>
+                <td th:text="${Employee.salary}">...</td>
+
+             </tr>
+
+          </th:block>
+       </table>
 </body>
 </html>

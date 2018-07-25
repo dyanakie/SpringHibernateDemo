@@ -42,15 +42,6 @@ public class EmployeeController {
         return modelAndView;
     }
 
-    @GetMapping("/salary")
-    public String createSalaryView(){
-
-        ModelAndView modelAndView = new ModelAndView("salary");
-        modelAndView.addObject("salary", new Salary());
-
-        return "salary";
-    }
-
 
     @GetMapping("/showAll")
     public ModelAndView showAll(){
@@ -82,6 +73,25 @@ public class EmployeeController {
 
         return modelAndView;
 
+    }
+
+    @GetMapping("/salary")
+    public ModelAndView createSalaryView(){
+
+        ModelAndView modelAndView = new ModelAndView("salary");
+        modelAndView.addObject("salary", new Employee());
+
+        return modelAndView;
+    }
+
+    @PostMapping("/salary")
+    public ModelAndView createSalaryView(Employee employee){
+
+        ModelAndView modelAndView = new ModelAndView("salaryR");
+
+        modelAndView.addObject("listAllBiggerSalary", service.getWithSalaryOver(employee.getSalary()));
+
+        return modelAndView;
     }
 
 

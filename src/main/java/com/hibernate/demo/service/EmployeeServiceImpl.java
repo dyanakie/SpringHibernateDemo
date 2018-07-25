@@ -36,6 +36,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> getWithSalaryOver(int salary) {
-        return null;
+        return repository.getWithSalaryOver(salary);
     }
 }
