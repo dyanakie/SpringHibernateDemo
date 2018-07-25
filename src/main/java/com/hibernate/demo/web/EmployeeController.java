@@ -1,7 +1,6 @@
 package com.hibernate.demo.web;
 
 import com.hibernate.demo.models.Employee;
-import com.hibernate.demo.models.Employee2;
 import com.hibernate.demo.models.Salary;
 import com.hibernate.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.jws.WebParam;
-import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class EmployeeController {
     private EmployeeService service;
@@ -26,20 +20,26 @@ public class EmployeeController {
         this.service = service;
     }
 
-    @GetMapping("/employee")
-    public String greetingForm(Model model) {
+    @GetMapping("/employeeSearchId")
+    public ModelAndView employeeSearchId() {
+
+        ModelAndView modelAndView = new ModelAndView("employeeSearchId");
 
         Employee employee = new Employee();
-        model.addAttribute("employee", employee);
+        modelAndView.addObject("employee", employee);
 
-        return "employee";
+        return modelAndView;
     }
 
-    @PostMapping("/employee")
-    public String employeeSubmit(@ModelAttribute Employee employee, Model model) {
+    @PostMapping("/employeeSearchId")
+    public ModelAndView employeeSubmit(Employee employee) {
+
+        ModelAndView modelAndView = new ModelAndView("employeeSearchIdR");
+
         employee = service.getById(employee.getId());
-        model.addAttribute("employee", employee);
-        return "employeeResult";
+        modelAndView.addObject("employee", employee);
+
+        return modelAndView;
     }
 
     @GetMapping("/salary")
@@ -51,15 +51,6 @@ public class EmployeeController {
         return "salary";
     }
 
-    /*@PostMapping("/salary")
-    public String salarySubmit(@ModelAttribute Employee employee, Model model) {
-
-        List<Employee> list = service.getWithSalaryOver(employee.getSalary());
-
-        employee = service.getById(employee.getId());
-        model.addAttribute("employee", employee);
-        return "salaryR";
-    }*/
 
     @GetMapping("/showAll")
     public ModelAndView showAll(){
