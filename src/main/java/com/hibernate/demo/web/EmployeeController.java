@@ -92,5 +92,25 @@ public class EmployeeController {
         return modelAndView;
     }
 
+    @GetMapping("/employeeSearchName")
+    public ModelAndView createSearchNameView(){
+
+        ModelAndView modelAndView = new ModelAndView("employeeSearchName");
+        modelAndView.addObject("employee", new Employee());
+
+        return modelAndView;
+    }
+
+    @PostMapping("/employeeSearchName")
+    public ModelAndView submitSearchName(Employee employee){
+
+        ModelAndView modelAndView = new ModelAndView("employeeSearchNameR");
+
+        System.out.println(employee.getSalary());
+        modelAndView.addObject("employee", service.getByName(employee.getFirstName()));
+
+        return modelAndView;
+    }
+
 
 }

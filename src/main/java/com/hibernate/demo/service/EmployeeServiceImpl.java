@@ -25,6 +25,15 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Employee getByName(String name) {
+        return repository.getAll()
+                .stream()
+                .filter(x -> x.getFirstName().equals(name))
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
     public void addEmployee(Employee employee) {
          repository.addEmployee(employee);
     }
