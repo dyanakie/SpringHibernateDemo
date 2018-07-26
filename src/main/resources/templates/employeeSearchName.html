@@ -13,7 +13,7 @@
     <div class="employeeForm">
             <h1>Search by Employee</h1>
             <form action="#" th:action="@{/employeeSearchName}" th:object="${employee}" method="post">
-                <p>Employee id: <input type="text" th:field="*{firstName}" /></p>
+                <p>Employee name: <input type="text" th:field="*{firstName}" /></p>
             <p><a href="employeeSearchId.html"><input type="submit" value="Submit" /></a> <input type="reset" value="Reset" /></p>
             </form>
 

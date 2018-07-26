@@ -16,6 +16,7 @@
     <p th:text="'Last Name: ' + ${employee.lastName}" />
     <p th:text="'Job Title: ' + ${employee.jobTitle}" />
     <p th:text="'Salary: ' + ${employee.getSalary()}" />
+    <p th:text="'Address: ' + ${employee.getAddress().getAddress()}" />
     <button><a href="/createEmployee">Back</a></button>
 
 </body>

@@ -19,6 +19,10 @@ public class Address {
     @Column(name="TownID")
     private int townId;
 
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "addressID", nullable = false)
+    private Employee employee;
+
 
 
     public Address() {
@@ -39,6 +43,9 @@ public class Address {
     }
 
     public String getAddress() {
+        if(address == null){
+            return "NONE";
+        }
         return address;
     }
 

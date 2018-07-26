@@ -1,6 +1,7 @@
 package com.hibernate.demo.service;
 
 
+import com.hibernate.demo.models.Address;
 import com.hibernate.demo.models.Employee;
 import com.hibernate.demo.models.Town;
 import org.hibernate.SessionFactory;
@@ -18,6 +19,7 @@ public class FactorySession {
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Town.class)
+                .addAnnotatedClass(Address.class)
                 .buildSessionFactory();
     }
 }

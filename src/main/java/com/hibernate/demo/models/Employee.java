@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "employees")
 public class Employee {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "EmployeeID")
@@ -24,6 +23,21 @@ public class Employee {
     @Column(name = "JobTitle")
     private String jobTitle;
 
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "employee")
+    private Address address;
+
+    public Address getAddress() {
+        if(address == null){
+            address = new Address();
+        }
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public Employee(){
 
@@ -34,6 +48,7 @@ public class Employee {
         this.lastName = lastName;
         this.jobTitle = jobTitle;
         this.salary = salary;
+
     }
 
 
