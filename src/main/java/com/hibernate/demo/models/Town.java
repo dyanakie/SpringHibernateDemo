@@ -14,6 +14,18 @@ public class Town {
     @Column(name = "Name")
     private String name;
 
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "TownID", nullable = false)
+    private Address address;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     public Town(){
 
     }
@@ -38,4 +50,11 @@ public class Town {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        if(this.name == null){
+            return "NONE";
+        }
+        return this.getName();
+    }
 }

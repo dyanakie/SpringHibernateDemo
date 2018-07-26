@@ -21,6 +21,8 @@
                           <td> <strong>Last Name</strong></td>
                           <td> <strong>Job Title</strong></td>
                           <td> <strong>Salary</strong></td>
+                          <td> <strong>Address</strong></td>
+                          <td> <strong>Town</strong></td>
 
          </tr>
 
@@ -31,6 +33,8 @@
                 <td th:text="${Employee.lastName}">...</td>
                 <td th:text="${Employee.JobTitle}">...</td>
                 <td th:text="${Employee.salary}">...</td>
+                <td th:text="${Employee.getAddress().getAddress()}">...</td>
+                <td th:text="${Employee.getAddress().getTown()}">...</td>
 
              </tr>
 

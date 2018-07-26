@@ -16,6 +16,7 @@
 <p th:text="'Job Title: ' + ${employee.jobTitle}" />
 <p th:text="'Salary: ' + ${employee.getSalary()}" />
 <p th:text="'Address: ' + ${employee.getAddress().getAddress()}" />
+<p th:text="'Town: ' + ${employee.getAddress().getTown()}" />
 <button><a href="/employeeSearchName">New Search</a></button>
 </body>
 </html>

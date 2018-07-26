@@ -23,7 +23,21 @@ public class Address {
     @JoinColumn(name = "addressID", nullable = false)
     private Employee employee;
 
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "address")
+    private Town town;
 
+    public Town getTown() {
+        if(town == null){
+            this.town = new Town();
+        }
+        return town;
+    }
+
+    public void setTown(Town town) {
+        this.town = town;
+    }
 
     public Address() {
     }
@@ -59,5 +73,10 @@ public class Address {
 
     public void setTownId(int townId) {
         this.townId = townId;
+    }
+
+    @Override
+    public String toString() {
+        return getAddress();
     }
 }
