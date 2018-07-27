@@ -23,21 +23,15 @@ public class Address {
     @JoinColumn(name = "addressID", nullable = false)
     private Employee employee;
 
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade =  CascadeType.ALL,
-            mappedBy = "address")
+    /*@ManyToOne
+    @JoinColumn(name = "addresses", nullable = false)
     private Town town;
 
-    public Town getTown() {
-        if(town == null){
-            this.town = new Town();
-        }
-        return town;
-    }
+
 
     public void setTown(Town town) {
         this.town = town;
-    }
+    }*/
 
     public Address() {
     }
@@ -46,6 +40,11 @@ public class Address {
         this.id = id;
         this.address = address;
         this.townId = townId;
+    }
+
+    public Town getTown() {
+
+        return new Town();
     }
 
     public int getId() {

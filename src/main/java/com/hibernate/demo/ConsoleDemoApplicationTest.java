@@ -6,6 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.util.List;
+
 
 public class ConsoleDemoApplicationTest {
 
@@ -23,12 +25,13 @@ public class ConsoleDemoApplicationTest {
 
         Town newTown = new Town("Targovishte");
 
-
         session.beginTransaction();
 
-        session.save(newTown);
+        List<Employee> all = session.createQuery("from Employee").list();
+
         session.getTransaction().commit();
 
         session.close();
+        System.out.println(all);
     }
 }

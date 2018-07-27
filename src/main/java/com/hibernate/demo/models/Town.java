@@ -1,6 +1,8 @@
 package com.hibernate.demo.models;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "towns")
@@ -14,20 +16,25 @@ public class Town {
     @Column(name = "Name")
     private String name;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    /*@OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "TownID", nullable = false)
-    private Address address;
+    private List<Address> addresses;
 
-    public Address getAddress() {
-        return address;
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }*/
 
     public Town(){
 
+    }
+
+    public Town(int id, String name){
+        this.id = id;
+        this.name = name;
     }
 
     public Town(String name){
